@@ -1,0 +1,34 @@
+// Databases inicializador
+$(document).ready(function() {
+
+    // Table ID
+    var table = $('#dataTable');
+    
+    table.DataTable({
+      "autoWidth": false,
+      responsive: true,
+      responsive: {
+        details: {
+            display: $.fn.dataTable.Responsive.display.modal( {
+                header: function ( row ) {
+                    var data = row.data();
+                    return 'Details for '+data[0]+' '+data[1];
+                }
+            } ),
+            renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+        }
+      },
+     
+    }).adjust().draw();//autoadjust row table columns
+    
+  
+   
+
+    
+
+  }); //End document ready
+  
+
+  
+  
+  
